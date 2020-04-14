@@ -1,0 +1,67 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        jcenter()
+    }
+    dependencies {
+    }
+}
+
+group 'WhiskTestTask'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    options.encoding = 'UTF-8'
+}
+
+compileTestJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    options.encoding = 'UTF-8'
+    options.compilerArgs += "-parameters"
+}
+
+repositories {
+    jcenter()
+}
+
+ext {
+    testNgVersion = '6.14.3'
+    selenideVersion = '5.9.0'
+}
+
+dependencies {
+    testCompile "org.testng:testng:$testNgVersion"
+    compile "org.testng:testng:$testNgVersion"
+    compile "com.codeborne:selenide:$selenideVersion"
+    compile("org.testng:testng:$testNgVersion")
+}
+
+wrapper {
+    gradleVersion = '6.0.1'
+    distributionUrl = distributionUrl.replace("bin", "all")
+}
+
+test {
+    useTestNG {
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+    }
+}
