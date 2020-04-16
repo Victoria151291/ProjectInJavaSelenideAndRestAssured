@@ -1,11 +1,9 @@
 package tests;
 
 import helpers.webDriverProviders.WebDriverFactory;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import pages.AccountSettingsPage;
+import org.testng.annotations.*;
 import pages.AuthPage;
+import pages.ShoppingListPage;
 import testData.DataForTests;
 
 import static com.codeborne.selenide.Configuration.browser;
@@ -14,7 +12,7 @@ import static helpers.webDriverProviders.WebDriverFactory.chrome;
 
 public class BaseTest {
 
-    @BeforeClass
+    @BeforeSuite
     public static void initSettings() {
         browserSize = "1280x1024";
         browser = WebDriverFactory.getWebDriver(chrome);    //type 'chrome' or 'firefox' to choose the web browser for running tests
@@ -23,18 +21,26 @@ public class BaseTest {
                 .openAuthPage();
     }
 
-    @BeforeMethod
+    /**
+     * this part of registration of an account is in this class because registration is implemented in the same way as authorization
+     */
+    @BeforeClass
     public void authAndLogIn() {
         AuthPage
                 .initAuthPage()
-                .authAndLogIn(DataForTests.initDataForTests().getRandomTestUserEmail());
+                .authAndLogIn(DataForTests.initDataForTests().getRandomTestAccountEmail());
     }
 
-    @AfterClass
+    /**
+     * deletes test data after running main tests
+     */
+    @AfterSuite
     public void tearDown() {
-        AccountSettingsPage
-                .initAccountSettingsPage()
-                .deleteTestUser();
+        ShoppingListPage
+                .initShoppingListPage()
+                .goToSettings()
+                .goToAccountSettings()
+                .deleteTestAccount();
     }
 
 }

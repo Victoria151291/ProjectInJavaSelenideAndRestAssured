@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static helpers.Paths.*;
+import static helpers.URLs.Paths.*;
 
 public class FirefoxDriverProvider implements WebDriverProvider {
 
@@ -36,7 +36,6 @@ public class FirefoxDriverProvider implements WebDriverProvider {
         }
         return firefoxDriver;
     }
-
 
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {

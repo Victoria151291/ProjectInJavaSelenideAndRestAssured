@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static helpers.Paths.*;
+import static helpers.URLs.Paths.*;
 
 public class ChromeDriverProvider implements WebDriverProvider {
 

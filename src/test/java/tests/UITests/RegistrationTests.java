@@ -6,15 +6,17 @@ import tests.BaseTest;
 
 public class RegistrationTests extends BaseTest {
 
-    @Test(description = "Registration of a new test user")
-    public void registerNewTestUser() {
+    @Test(description = "Registration of a new account")
+    public void registerNewAccountAndChangePassword() {
         ShoppingListPage
                 .initShoppingListPage()
                 .checkThatSignUpWelcomeMsgExists()
                 .goToSettings()
                 .goToAccountSettings()
                 .checkPasswordDefaultValue()
-                .changePassword();
+                .changePassword()
+                .goBackToSettings()
+                .goBackToShoppingList();
     }
 
 }
