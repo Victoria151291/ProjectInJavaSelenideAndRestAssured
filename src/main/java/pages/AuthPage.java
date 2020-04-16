@@ -1,7 +1,7 @@
 package pages;
 
 import static com.codeborne.selenide.Selenide.open;
-import static helpers.URLs.BASE_URL;
+import static helpers.URLs.URLs.BASE_URL;
 
 public class AuthPage extends Page {
 
@@ -22,10 +22,9 @@ public class AuthPage extends Page {
     /**
      * * auth and log in the shopping list
      */
-    public void authAndLogIn(String testUserEmail) {
-        clearAndSetValueIntoField(LOGIN_FIELD_XPATH, testUserEmail)
+    public void authAndLogIn(String accountEmail) {
+        clearAndSetValueIntoField(LOGIN_FIELD_XPATH, accountEmail)
                 .clickOnElementByLMB(LOGIN_BTN_XPATH);
-        ShoppingListPage.initShoppingListPage();
     }
 
 }

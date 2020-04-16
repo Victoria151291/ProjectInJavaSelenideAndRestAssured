@@ -8,11 +8,11 @@ public class DataForTests {
         return new DataForTests();
     }
 
-    public String getRandomTestUserEmail() {
+    public String getRandomTestAccountEmail() {
         return getUniqueValue("testemail") + "@test.com";
     }
 
-    public String getRandomTestUserPassword() {
+    public String getRandomTestAccountPassword() {
         return getUniqueValue("");
     }
 

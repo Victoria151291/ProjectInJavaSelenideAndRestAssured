@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.actions;
 import static org.testng.Assert.assertEquals;
 
 public class Page {
@@ -12,8 +13,9 @@ public class Page {
      *
      * @param elementXpath - xpath of the web element to click
      */
-    public void clickOnElementByLMB(String elementXpath) {
+    public Page clickOnElementByLMB(String elementXpath) {
         $x(elementXpath).click();
+        return this;
     }
 
     /**
@@ -28,9 +30,10 @@ public class Page {
         return this;
     }
 
-    public void selectDropDownItem(String dropDownXpath, String itemXpath) {
+    public Page selectDropDownItem(String dropDownXpath, String itemXpath) {
         $x(dropDownXpath).click();
         $x(itemXpath).click();
+        return this;
     }
 
     /**
@@ -48,8 +51,26 @@ public class Page {
      * @param elementXpath - xpath of the web element
      * @param matchText    - the text to match
      */
-    public void getVisibleTextAndAssertIt(String elementXpath, String matchText) {
+    public Page getVisibleTextAndAssertIt(String elementXpath, String matchText) {
         String elementText = $x(elementXpath).getText();
         assertEquals(elementText, matchText);
+        return this;
+    }
+
+    /**
+     * takes an element and moves it according to the new coordinates
+     *
+     * @param elementXpath - xpath of the web element
+     * @param xOffset      - X coordinate
+     * @param yOffset      - Y coordinate
+     */
+    public Page dragAndDrop(String elementXpath, int xOffset, int yOffset) {
+        actions()
+                .clickAndHold($x(elementXpath))
+                .moveByOffset(xOffset, yOffset)
+                .release()
+                .build()
+                .perform();
+        return this;
     }
 }
