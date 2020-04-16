@@ -1,8 +1,6 @@
-package pages;
+package UI.pages;
 
 import testData.DataForTests;
-
-import static testData.DataForTests.initDataForTests;
 
 public class AccountSettingsPage extends Page {
 

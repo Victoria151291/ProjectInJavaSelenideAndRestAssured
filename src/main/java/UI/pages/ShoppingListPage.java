@@ -1,4 +1,4 @@
-package pages;
+package UI.pages;
 
 public class ShoppingListPage extends Page {
 

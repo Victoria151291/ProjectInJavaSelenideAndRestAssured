@@ -1,4 +1,4 @@
-package pages;
+package UI.pages;
 
 import static com.codeborne.selenide.Selenide.open;
 import static helpers.URLs.URLs.BASE_URL;

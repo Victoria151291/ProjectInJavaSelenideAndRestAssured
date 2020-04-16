@@ -1,7 +1,7 @@
 package tests.UITests;
 
 import org.testng.annotations.Test;
-import pages.ShoppingListPage;
+import UI.pages.ShoppingListPage;
 import tests.BaseTest;
 
 public class RegistrationTests extends BaseTest {

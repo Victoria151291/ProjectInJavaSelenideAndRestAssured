@@ -1,10 +1,10 @@
 package tests.UITests;
 
 import org.testng.annotations.Test;
-import pages.ShoppingListPage;
+import UI.pages.ShoppingListPage;
 import tests.BaseTest;
 
-public class ShoppingListTests extends BaseTest {
+public class ShoppingListUITests extends BaseTest {
 
     @Test(description = "Adding items to the shopping list")
     public void addItemToShoppingList() {

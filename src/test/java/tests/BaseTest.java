@@ -2,8 +2,8 @@ package tests;
 
 import helpers.webDriverProviders.WebDriverFactory;
 import org.testng.annotations.*;
-import pages.AuthPage;
-import pages.ShoppingListPage;
+import UI.pages.AuthPage;
+import UI.pages.ShoppingListPage;
 import testData.DataForTests;
 
 import static com.codeborne.selenide.Configuration.browser;
