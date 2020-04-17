@@ -22,9 +22,10 @@ public class AuthPage extends Page {
     /**
      * * auth and log in the shopping list
      */
-    public void authAndLogIn(String accountEmail) {
+    public ShoppingListPage authAndLogIn(String accountEmail) {
         clearAndSetValueIntoField(LOGIN_FIELD_XPATH, accountEmail)
                 .clickOnElementByLMB(LOGIN_BTN_XPATH);
+        return ShoppingListPage.initShoppingListPage();
     }
 
 }

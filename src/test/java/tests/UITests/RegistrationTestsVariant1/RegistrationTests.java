@@ -1,12 +1,14 @@
-package tests.UITests;
+package tests.UITests.RegistrationTestsVariant1;
 
 import org.testng.annotations.Test;
 import UI.pages.ShoppingListPage;
-import tests.BaseTest;
 
 public class RegistrationTests extends BaseTest {
 
-    @Test(description = "Registration of a new account")
+    /**
+     * the register (auth) method is not the part of the test here
+     */
+    @Test(description = "Registration of a new account with changing a password")
     public void registerNewAccountAndChangePassword() {
         ShoppingListPage
                 .initShoppingListPage()

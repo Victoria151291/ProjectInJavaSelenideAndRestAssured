@@ -1,4 +1,4 @@
-package tests;
+package tests.UITests.RegistrationTestsVariant1;
 
 import helpers.webDriverProviders.WebDriverFactory;
 import org.testng.annotations.*;
@@ -22,7 +22,7 @@ public class BaseTest {
     }
 
     /**
-     * this part of registration of an account is in this class because registration is implemented in the same way as authorization
+     * this part of registration of an account is in @BeforeClass because registration is implemented in the same way as authorization
      */
     @BeforeClass
     public void authAndLogIn() {

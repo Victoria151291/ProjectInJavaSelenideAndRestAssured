@@ -2,7 +2,7 @@ package tests.UITests;
 
 import org.testng.annotations.Test;
 import UI.pages.ShoppingListPage;
-import tests.BaseTest;
+import tests.UITests.RegistrationTestsVariant1.BaseTest;
 
 public class ShoppingListUITests extends BaseTest {
 

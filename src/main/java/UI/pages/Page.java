@@ -41,8 +41,9 @@ public class Page {
      *
      * @param elementXpath - xpath of the web element
      */
-    public void checkThatElementExists(String elementXpath) {
+    public Page checkThatElementExists(String elementXpath) {
         $x(elementXpath).should(Condition.exist);
+        return this;
     }
 
     /**
