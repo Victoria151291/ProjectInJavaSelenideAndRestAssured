@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.actions;
 import static org.testng.Assert.assertEquals;
 
-public class Page {
+public abstract class Page {
 
     /**
      * clicks on the web element by left mouse's button

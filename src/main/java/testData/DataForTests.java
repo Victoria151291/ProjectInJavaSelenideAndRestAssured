@@ -1,5 +1,7 @@
 package testData;
 
+import org.json.JSONObject;
+
 import java.util.UUID;
 
 public class DataForTests {
@@ -21,4 +23,10 @@ public class DataForTests {
         return value;
     }
 
+    public JSONObject getJSONForAuth() {
+        JSONObject json = new JSONObject();
+        json.put("email", "testemail49c75352@test.com");
+        json.put("password", "e38b19e3");
+        return json;
+    }
 }

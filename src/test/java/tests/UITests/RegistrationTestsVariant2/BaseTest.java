@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Configuration.browserSize;
 import static helpers.webDriverProviders.WebDriverFactory.chrome;
 
-public class BaseTest {
+public abstract class BaseTest {
 
     @BeforeSuite
     public static void initSettings() {
