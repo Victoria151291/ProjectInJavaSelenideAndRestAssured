@@ -31,19 +31,15 @@ repositories {
     jcenter()
 }
 
-ext {
-    testNgVersion = '6.14.3'
-    selenideVersion = '5.9.0'
-}
-
 dependencies {
     implementation "io.rest-assured:rest-assured:4.1.2"
     implementation "io.rest-assured:json-path:4.1.2"
-    testCompile "org.testng:testng:$testNgVersion"
+    testCompile "org.testng:testng:6.14.3"
     testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.1.2'
-    compile "org.testng:testng:$testNgVersion"
-    compile "com.codeborne:selenide:$selenideVersion"
-    compile("org.testng:testng:$testNgVersion")
+    compile group: 'org.json', name: 'json', version: '20180130'
+    compile "org.testng:testng:6.14.3"
+    compile "com.codeborne:selenide:5.9.0"
+    compile("org.testng:testng:6.14.3")
 }
 
 wrapper {
