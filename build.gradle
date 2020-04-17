@@ -37,7 +37,10 @@ ext {
 }
 
 dependencies {
+    implementation "io.rest-assured:rest-assured:4.1.2"
+    implementation "io.rest-assured:json-path:4.1.2"
     testCompile "org.testng:testng:$testNgVersion"
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.1.2'
     compile "org.testng:testng:$testNgVersion"
     compile "com.codeborne:selenide:$selenideVersion"
     compile("org.testng:testng:$testNgVersion")
